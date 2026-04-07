@@ -1,0 +1,417 @@
+:root {
+  --verde: #7fbcad;
+  --azul: #A8D0E6;
+  --rosa: #F4C2C2;
+  --texto: #444;
+  --blanco: #ffffff;
+}
+
+body { 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; 
+  color: var(--texto); 
+  background: #fcfcfc; 
+  scroll-behavior: smooth; 
+}
+
+/* --- CABECERA ESTILO INSTITUCIONAL --- */
+header {
+  background-color: rgba(255, 255, 255, 0.98);
+  padding: 0.8rem 5%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover { transform: scale(1.02); }
+
+.logo-img-header {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-texto h1 { 
+  margin: 0; 
+  font-size: 1.3rem; 
+  color: var(--verde); 
+  font-weight: 800;
+  line-height: 1;
+}
+
+.logo-texto span { 
+  display: block; 
+  font-size: 0.75rem; 
+  color: #888; 
+  font-weight: 400;
+}
+
+nav ul { 
+  list-style: none; 
+  display: flex; 
+  gap: 5px; 
+  margin: 0; 
+  padding: 0; 
+}
+
+nav a { 
+  text-decoration: none; 
+  color: #666; 
+  font-weight: 600; 
+  font-size: 0.9rem; 
+  padding: 0.6rem 1.2rem; 
+  border-radius: 50px; 
+  transition: all 0.3s ease; 
+}
+
+nav a:hover, nav a.activo { 
+  background-color: var(--verde); 
+  color: #fff; 
+  box-shadow: 0 4px 8px rgba(127, 188, 173, 0.2); 
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--verde);
+  border-radius: 3px;
+}
+
+/* --- HERO --- */
+.hero { 
+  height: 60vh; 
+  background: url('img/casitas.png') center bottom/cover no-repeat; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+}
+
+.hero-card { 
+  background: rgba(255, 255, 255, 0.7); 
+  padding: 30px; 
+  border-radius: 25px; 
+  max-width: 800px; 
+  text-align: center; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+  backdrop-filter: blur(4px);
+}
+
+.hero-card h2 { 
+  font-size: 2.2rem; 
+  color: var(--verde); 
+  margin-bottom: 15px; 
+  font-weight: 800; 
+}
+
+.tag-loc { 
+  margin-top: 20px; 
+  font-weight: 600; 
+  color: var(--verde); 
+}
+
+/* --- SECCIONES Y CARDS GENERALES --- */
+section { padding: 80px 8% 120px; position: relative; }
+.bg-verde { background-color: var(--verde); }
+.bg-azul { background-color: var(--azul); }
+.bg-rosa { background-color: var(--rosa); }
+.bg-blanco { background-color: #fff; }
+
+.card-blanca { 
+  background: rgba(255, 255, 255, 0.9); 
+  color: #444; 
+  padding: 30px; 
+  border-radius: 20px; 
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+}
+
+.titulo-seccion { 
+  text-align: center; 
+  font-size: 2.5rem; 
+  font-weight: 800; 
+  margin-bottom: 40px; 
+  color: #fff; 
+}
+
+/* --- SECCIÓN LIBRO --- */
+.contenedor-libro {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: start;
+}
+
+.libro-narrativa { text-align: left; line-height: 1.8; font-size: 1rem; }
+.libro-narrativa p { margin-bottom: 20px; }
+
+.libro-ficha-tecnica { text-align: left; position: sticky; top: 100px; }
+.libro-ficha-tecnica h3 { color: var(--verde); margin-bottom: 20px; font-weight: 800; }
+
+.lista-ficha { list-style: none; padding: 0; font-size: 0.9rem; }
+.lista-ficha li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+.btn-comprar-libro {
+  display: block;
+  text-align: center;
+  background: var(--verde);
+  color: #fff;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+
+.btn-comprar-libro:hover { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.grilla-fotos-libro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.marco-foto { height: 300px; border-radius: 15px; overflow: hidden; border: 8px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.marco-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- SECCIÓN MÚSICA --- */
+.contenedor-musica {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.musica-ficha { text-align: left; }
+.musica-ficha h3 { margin-bottom: 25px; color: var(--azul); font-weight: 800; }
+.lista-musica { list-style: none; padding: 0; }
+.lista-musica li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: #444; }
+
+.reproductores-grid { display: flex; flex-direction: column; gap: 20px; }
+.player-wrapper { padding: 15px !important; background: #fff; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+/* --- SECCIÓN FUNCIONES --- */
+.contenedor-funciones { max-width: 900px; margin: 0 auto 50px; }
+.funciones-texto { text-align: left; line-height: 1.8; }
+.ficha-shunya { margin-top: 25px; padding-top: 20px; border-top: 2px dashed var(--rosa); }
+.ficha-shunya h4 { color: var(--rosa); margin-bottom: 10px; font-weight: 800; }
+
+.btn-contratar-v2 {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.btn-contratar-v2:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+.titulo-intermedio { text-align: center; color: #fff; font-weight: 700; margin: 60px 0 30px; font-size: 1.8rem; }
+
+.grilla-videos-instagram {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.video-item {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.grilla-fotos-funciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.marco-polaroid { height: 250px; background: #fff; padding: 10px; padding-bottom: 40px; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.marco-polaroid img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- CORRECCIÓN SECCIÓN CONTACTO --- */
+.contenedor-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contacto-info {
+    flex: 1.2;
+    text-align: left;
+    padding: 40px !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 320px;
+}
+
+.dato-contacto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.dato-contacto .material-icons { color: var(--verde); font-size: 2rem; }
+.dato-contacto a { text-decoration: none; color: var(--azul); font-weight: 600; transition: 0.3s; }
+.dato-contacto a:hover { color: var(--verde); }
+.dato-contacto p { margin: 0; font-size: 1.1rem; }
+
+.hojas-esquina {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.contacto-ilustracion { flex: 0.8; display: flex; justify-content: center; }
+.img-final {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+/* --- ANIMACIONES Y DINÁMICA --- */
+.reveal, .reveal-img { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active, .reveal-img.active { opacity: 1; transform: translateY(0); }
+
+.marco-foto img, .marco-polaroid img { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.marco-foto:hover img, .marco-polaroid:hover img { transform: scale(1.05) rotate(2deg); }
+
+.btn-subir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--verde);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-subir:hover { background: var(--azul); transform: translateY(-5px); }
+
+.btn-contratar-v2 { animation: pulse-btn 3s infinite; }
+@keyframes pulse-btn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+.anim-entrada { animation: reveal-hero 1.2s ease-out forwards; }
+@keyframes reveal-hero { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+/* --- DIVIDERS --- */
+.custom-shape-divider-bottom { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; transform: rotate(180deg); }
+.custom-shape-divider-bottom svg { height: 60px; width: 100%; }
+.shape-fill-verde { fill: var(--verde); }
+.shape-fill-rosa { fill: var(--rosa); }
+
+/* --- CORRECCIÓN FOOTER --- */
+footer {
+    padding: 60px 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.footer-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-footer {
+    height: 85px; /* Logo grande como pediste */
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.footer-texto {
+    color: #888;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.footer-creditos {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.footer-creditos a {
+    text-decoration: none;
+    color: var(--verde);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.footer-creditos a:hover { color: var(--azul); }
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+  .contenedor-libro, .contenedor-musica { grid-template-columns: 1fr; }
+  .libro-ficha-tecnica { position: static; }
+}
+
+@media (max-width: 900px) {
+  .grilla-fotos-libro, .grilla-fotos-funciones, .grilla-videos-instagram { grid-template-columns: 1fr; }
+  .grilla-videos-instagram { padding: 0 10px; }
+  .hero { height: auto; padding: 100px 20px; }
+  .contenedor-contacto { flex-direction: column; gap: 30px; }
+  .logo-footer { height: 65px; }
+  .contacto-info { padding: 30px !important; text-align: center; min-height: auto; }
+  .dato-contacto { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    height: calc(100vh - 80px);
+    align-items: center;
+    padding-top: 2rem;
+    transition: 0.4s;
+    z-index: 100;
+  }
+  nav ul.activo { left: 0; }
+}
