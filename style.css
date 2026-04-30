@@ -416,3 +416,73 @@ footer {
   }
   nav ul.activo { left: 0; }
 }
+/* --- ARREGLO CONTACTO --- */
+.bg-contacto {
+    background-color: #fcf6f6; /* Un tono crema/rosado muy claro para despegarlo del rosa fuerte */
+    padding: 80px 8%;
+}
+
+.contenedor-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-blanca-borde {
+    background: #fff;
+    padding: 40px !important;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    flex: 1;
+    border-top: 5px solid var(--verde);
+}
+
+/* --- ESTO ARREGLA LAS HOJAS GIGANTES --- */
+.composicion-ilustraciones {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.luna-principal {
+    width: 100%;
+    max-width: 300px; /* Tamaño controlado */
+    height: auto;
+}
+
+.hojas-decorativas-final {
+    width: 100%;
+    max-width: 280px; /* Tamaño controlado */
+    margin-top: -30px; /* Las sube para que abracen a la ilustración */
+    opacity: 0.9;
+}
+
+/* --- FOOTER --- */
+.footer-minimal {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.footer-minimal p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.link-nomade {
+    color: #4a90e2; /* Un azul que destaque para el link */
+    text-decoration: none;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-bottom: 2px solid #4a90e2;
+}
+
+.link-nomade:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
