@@ -276,121 +276,141 @@ section { padding: 80px 8% 120px; position: relative; }
   nav ul.activo { left: 0; }
 }
 
-/* --- CARTEL POP-UP FLOTANTE GIGANTE --- */
+/* ==========================================================================
+   PARCHE FINAL: POP-UP GIGANTE QUE LEVITA Y BOTONES ALINEADOS (ÚNICO BLOQUE)
+   ========================================================================== */
 .cartel-popup-flotante-grande {
     position: fixed;
     bottom: 30px;
     left: 30px;
-    z-index: 9999; /* Por encima de absolutamente todo */
-    max-width: 440px; /* Mucho más grande y espacioso */
-    background-color: var(--azul); /* Tu celeste pastel hermoso */
-    padding: 30px 35px;
+    z-index: 999999 !important; /* Por encima de todo para que no lo tape nada */
+    width: 90%;
+    max-width: 480px; /* Ensanchado para que el texto respire perfectamente */
+    background-color: var(--azul);
+    padding: 35px;
     border-radius: 25px;
-    box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5);
-    border: 4px dashed rgba(255, 255, 255, 0.8); /* Trazo escolar más marcado */
-    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, latido-popup-g 3.5s infinite ease-in-out;
+    box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
+    border: 4px dashed rgba(255, 255, 255, 0.9);
+    box-sizing: border-box !important;
+    /* EFECTO MÁGICO: Entrada con rebote y levitación infinita */
+    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out;
 }
 
 .popup-interior-grande {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
-    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .popup-texto-grande {
-    text-align: left;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .cartel-popup-flotante-grande h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.4rem; /* Título imponente */
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
+    line-height: 1.3;
 }
 
-.cartel-popup-flotante-grande p {
-    margin: 0 0 15px 0;
-    font-size: 1.05rem;
-    color: #ffffff;
-    line-height: 1.4;
+.popup-descripcion {
+    margin: 0 0 20px 0 !important;
+    font-size: 1.1rem !important;
+    color: #ffffff !important;
+    line-height: 1.5 !important;
+    display: block !important;
+    width: 100% !important;
 }
 
 .cartel-popup-flotante-grande p strong {
     background-color: rgba(255, 255, 255, 0.25);
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 6px;
+    color: #ffffff;
 }
 
-/* Caja de invitación a ver la gacetilla */
+/* Caja de invitación interna */
 .popup-invitacion-gacetilla {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     background: rgba(255, 255, 255, 0.15);
-    padding: 10px 15px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
     border: 1px dashed rgba(255, 255, 255, 0.4);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .popup-invitacion-gacetilla span {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #ffffff;
     font-weight: 600;
 }
 
 .popup-invitacion-gacetilla .material-icons {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--rosa);
 }
 
-/* Grupo de botones */
+/* GRILLA DE DOS COLUMNAS SIMÉTRICAS */
 .popup-botones-grupo {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Fuerza las dos columnas perfectas */
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 10px !important;
 }
 
-.btn-popup-accion-grande {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--verde);
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 800;
-    padding: 10px 20px;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.2s ease;
+/* ESTILO DEFINITIVO PARA LOS BOTONES DEL POPUP */
+.btn-popup-verde, .btn-popup-blanco {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 50px !important; /* Altura fija idéntica */
+    border-radius: 50px !important; /* Forma redondeada de píldora */
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
+    border: none !important;
+    margin: 0 !important;
+    text-shadow: none !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
-.btn-popup-accion-grande:hover {
+/* Botón Verde (WhatsApp) */
+.btn-popup-verde {
+    background-color: var(--verde) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+}
+.btn-popup-verde:hover {
+    background-color: #66a598 !important;
     transform: translateY(-2px);
-    background-color: #66a598;
 }
 
-.btn-popup-secundario {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: #ffffff;
-    color: var(--azul);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 700;
-    padding: 10px 18px;
-    border-radius: 50px;
-    transition: 0.2s ease;
+/* Botón Blanco (Gacetilla) */
+.btn-popup-blanco {
+    background-color: #ffffff !important;
+    color: var(--azul) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
 }
-
-.btn-popup-secundario:hover {
+.btn-popup-blanco:hover {
+    background-color: #f5fafd !important;
     transform: translateY(-2px);
-    background-color: #f0f7fa;
 }
 
 .estrella-pop-grande {
@@ -399,7 +419,7 @@ section { padding: 80px 8% 120px; position: relative; }
     animation: girar-estrella-g 8s infinite linear;
 }
 
-/* Botón de cerrar */
+/* Botón de cerrar (X) */
 .cerrar-popup-grande {
     position: absolute;
     top: -15px;
@@ -407,26 +427,31 @@ section { padding: 80px 8% 120px; position: relative; }
     background: #ffffff;
     border: 3px solid var(--azul);
     color: var(--azul);
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    font-size: 1.3rem;
-    line-height: 22px;
+    font-size: 1.4rem;
+    line-height: 24px;
     cursor: pointer;
     font-weight: 800;
-    z-index: 100;
+    z-index: 1000000 !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Animaciones */
-@keyframes entrada-popup-g {
-    from { opacity: 0; transform: translateY(50px) scale(0.8); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes latido-popup-g {
-    0%, 100% { box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5); transform: translateY(0); }
-    50% { box-shadow: 0 20px 50px rgba(168, 208, 230, 0.7); transform: translateY(-4px); }
+/* ANIMACIÓN DE LEVITACIÓN EN EL AIRE */
+@keyframes flotar-suave {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
+    }
+    50% {
+        transform: translateY(-12px); /* El cartel sube suavemente */
+        box-shadow: 0 35px 65px rgba(168, 208, 230, 0.8); /* La sombra acompaña el movimiento */
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
+    }
 }
 
 @keyframes girar-estrella-g {
@@ -434,105 +459,19 @@ section { padding: 80px 8% 120px; position: relative; }
     to { transform: rotate(360deg); }
 }
 
-/* Pantallas chicas */
-@media (max-width: 600px) {
+/* Responsive para pantallas chicas */
+@media (max-width: 550px) {
     .cartel-popup-flotante-grande {
         bottom: 15px;
         left: 15px;
         right: 15px;
+        width: auto;
         max-width: none;
-        padding: 20px;
+        padding: 25px 20px;
+        animation: entrada-popup-g 0.6s ease-out both; /* Apagamos la flotación en celular para facilitar el clic */
     }
     .popup-botones-grupo {
-        flex-direction: column;
+        grid-template-columns: 1fr !important; /* Se apilan verticales en móviles */
+        gap: 10px !important;
     }
-    .btn-popup-accion-grande, .btn-popup-secundario {
-        width: 100%;
-        justify-content: center;
-    }
-}
-/* --- ARREGLO DE BOTONES DEL POPUP GIGANTE --- */
-.cartel-popup-flotante-grande {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    z-index: 9999;
-    max-width: 440px;
-    background-color: var(--azul);
-    padding: 30px 35px;
-    border-radius: 25px;
-    box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5);
-    border: 4px dashed rgba(255, 255, 255, 0.8);
-    box-sizing: border-box; /* Evita que los paddings deformen la caja */
-}
-
-.popup-botones-grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Fuerza dos columnas iguales perfectas */
-    gap: 15px; /* Espacio exacto entre ambos botones */
-    width: 100%;
-    margin-top: 15px;
-}
-
-.btn-popup-accion-grande, .btn-popup-secundario {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 15px !important; /* Ajuste uniforme de altura */
-    border-radius: 50px !important;
-    font-size: 0.9rem !important;
-    text-decoration: none !important;
-    box-sizing: border-box;
-    width: 100% !important; /* Ahora ocupan el 100% de SU COLUMNA, no de todo el cartel */
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-/* Botón Verde (WhatsApp) */
-.btn-popup-accion-grande {
-    background-color: var(--verde) !important;
-    color: #ffffff !important;
-    font-weight: 800 !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.btn-popup-accion-grande:hover {
-    transform: translateY(-2px);
-    background-color: #66a598 !important;
-}
-
-/* Botón Blanco (Gacetilla Drive) */
-.btn-popup-secundario {
-    background-color: #ffffff !important;
-    color: var(--azul) !important;
-    font-weight: 700 !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.btn-popup-secundario:hover {
-    transform: translateY(-2px);
-    background-color: #f5fafd !important;
-}
-
-/* Responsive para celulares: uno abajo del otro si la pantalla es muy chica */
-@media (max-width: 500px) {
-    .popup-botones-grupo {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-}
-/* --- COMPLEMENTO DE SEGURIDAD BOTONES --- */
-.popup-botones-grupo {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Fuerza las dos columnas en escritorio */
-    gap: 15px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    margin-top: 10px !important;
-}
-
-.btn-popup-verde, .btn-popup-blanco {
-    text-shadow: none !important;
-    font-family: 'Poppins', sans-serif !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
 }
