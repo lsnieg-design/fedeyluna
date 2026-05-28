@@ -131,17 +131,7 @@
         </div> <!-- AQUÍ se cierra la card-blanca de manera prolija -->
     </div> <!-- Cierre del contenedor-funciones -->
 
-    <!-- EL CARTEL POP: Va suelto abajo de la tarjeta para que actúe como un bloque destacado -->
-    <div class="cartel-pop reveal">
-        <div class="cartel-pop-interior">
-            <span class="material-icons estrella-pop">star</span>
-            <div class="cartel-texto">
-                <h3>¡Un espectáculo pensado para las infancias!</h3>
-                <p>Llevalo a <strong>escuelas, jardines, eventos</strong> y espacios de teatro <strong>formal y no formal</strong>.</p>
-            </div>
-            <span class="material-icons estrella-pop">star</span>
-        </div>
-    </div>
+  
 
             <h3 class="titulo-intermedio reveal">Historias y Momentos</h3>
             <div class="grilla-videos-instagram reveal">
@@ -234,5 +224,18 @@
         }
         window.addEventListener('load', reveal);
     </script>
+    <!-- CARTEL POP-UP FLOTANTE INTERACTIVO -->
+<div class="cartel-popup-flotante" id="popupEscuelas">
+    <button class="cerrar-popup" onclick="document.getElementById('popupEscuelas').style.display='none'">×</button>
+    <div class="cartel-popup-interior">
+        <span class="material-icons estrella-pop">star</span>
+        <div class="cartel-texto">
+            <h3>¡Pensado para las infancias!</h3>
+            <p>Llevalo a <strong>escuelas, jardines, eventos</strong> y espacios de teatro <strong>formal y no formal</strong>.</p>
+            <a href="https://wa.me/541150528203" target="_blank" class="btn-popup-accion">¡Contratar Función!</a>
+        </div>
+        <span class="material-icons estrella-pop">star</span>
+    </div>
+</div>
 </body>
 </html>
