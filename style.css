@@ -275,3 +275,71 @@ section { padding: 80px 8% 120px; position: relative; }
   }
   nav ul.activo { left: 0; }
 }
+
+/* --- CARTEL POP FUNCIONES --- */
+.cartel-pop {
+    margin-top: 40px;
+    text-align: center;
+    animation: pulso-sutil 4s infinite ease-in-out;
+}
+
+.cartel-pop-interior {
+    background-color: var(--azul); /* Usamos tu azul para que resalte sobre el fondo rosa */
+    color: #fff;
+    padding: 25px 40px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(168, 208, 230, 0.4);
+    border: 3px dashed #fff; /* El toque lúdico de costura/recorte */
+}
+
+.cartel-pop h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.cartel-pop p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cartel-pop p strong {
+    color: #fff;
+    background-color: rgba(127, 188, 173, 0.4); /* Resaltado verde sutil de fondo */
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.estrella-pop {
+    font-size: 2.2rem;
+    color: var(--rosa); /* Estrellitas rosa pastel */
+    animation: girar-estrella 6s infinite linear;
+}
+
+/* Animaciones exclusivas para el cartel pop */
+@keyframes pulso-sutil {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes girar-estrella {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Ajuste responsive para que no se rompa en celulares */
+@media (max-width: 768px) {
+    .cartel-pop-interior {
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+    }
+    .cartel-pop h3 { font-size: 1.2rem; }
+    .cartel-pop p { font-size: 1rem; }
+}
