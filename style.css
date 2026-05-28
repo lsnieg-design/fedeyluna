@@ -1,4 +1,6 @@
-/* --- CONFIGURACIONES GENERALES --- */
+/* ==========================================================================
+   1. CONFIGURACIONES GENERALES Y VARIABLES
+   ========================================================================== */
 :root {
   --verde: #7fbcad;
   --azul: #A8D0E6;
@@ -15,7 +17,9 @@ body {
   scroll-behavior: smooth; 
 }
 
-/* --- CABECERA --- */
+/* ==========================================================================
+   2. CABECERA Y NAVEGACIÓN
+   ========================================================================== */
 header {
   background-color: rgba(255, 255, 255, 0.98);
   padding: 0.8rem 5%;
@@ -33,7 +37,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
+ text-decoration: none;
   transition: transform 0.3s ease;
 }
 .logo-container:hover { transform: scale(1.02); }
@@ -68,7 +72,9 @@ nav a:hover, nav a.activo {
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
 .bar { width: 25px; height: 3px; background-color: var(--verde); border-radius: 3px; }
 
-/* --- HERO --- */
+/* ==========================================================================
+   3. HERO / INICIO
+   ========================================================================== */
 .hero { 
   height: 60vh; 
   background: url('img/casitas.png') center bottom/cover no-repeat; 
@@ -89,7 +95,9 @@ nav a:hover, nav a.activo {
 .hero-card h2 { font-size: 2.2rem; color: var(--verde); margin-bottom: 15px; font-weight: 800; }
 .tag-loc { margin-top: 20px; font-weight: 600; color: var(--verde); }
 
-/* --- SECCIONES Y CARDS GENERALES --- */
+/* ==========================================================================
+   4. ESTILOS DE SECCIONES GENERALES
+   ========================================================================== */
 section { padding: 80px 8% 120px; position: relative; }
 .bg-verde { background-color: var(--verde); }
 .bg-azul { background-color: var(--azul); }
@@ -105,7 +113,9 @@ section { padding: 80px 8% 120px; position: relative; }
 }
 .titulo-seccion { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; color: #fff; }
 
-/* --- SECCIÓN LIBRO --- */
+/* ==========================================================================
+   5. SECCIÓN LIBRO
+   ========================================================================== */
 .contenedor-libro { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-bottom: 50px; align-items: start; }
 .libro-narrativa { text-align: left; line-height: 1.8; font-size: 1rem; }
 .libro-narrativa p { margin-bottom: 20px; }
@@ -124,7 +134,9 @@ section { padding: 80px 8% 120px; position: relative; }
 .marco-foto { height: 300px; border-radius: 15px; overflow: hidden; border: 8px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .marco-foto img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- SECCIÓN MÚSICA --- */
+/* ==========================================================================
+   6. SECCIÓN MÚSICA
+   ========================================================================== */
 .contenedor-musica { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; max-width: 1200px; margin: 0 auto; }
 .musica-ficha { text-align: left; }
 .musica-ficha h3 { margin-bottom: 25px; color: var(--azul); font-weight: 800; }
@@ -133,7 +145,9 @@ section { padding: 80px 8% 120px; position: relative; }
 .reproductores-grid { display: flex; flex-direction: column; gap: 20px; }
 .player-wrapper { padding: 15px !important; background: #fff; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-/* --- SECCIÓN FUNCIONES --- */
+/* ==========================================================================
+   7. SECCIÓN FUNCIONES (VIDEOS E INSTAGRAM)
+   ========================================================================== */
 .contenedor-funciones { max-width: 900px; margin: 0 auto 50px; }
 .funciones-texto { text-align: left; line-height: 1.8; }
 .ficha-shunya { margin-top: 25px; padding-top: 20px; border-top: 2px dashed var(--rosa); }
@@ -152,9 +166,11 @@ section { padding: 80px 8% 120px; position: relative; }
 .marco-polaroid { height: 250px; background: #fff; padding: 10px; padding-bottom: 40px; border-radius: 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 .marco-polaroid img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- AJUSTES SECCIÓN CONTACTO (Corregido) --- */
+/* ==========================================================================
+   8. SECCIÓN CONTACTO
+   ========================================================================== */
 .bg-contacto {
-    background-color: #f7f9f9 !important; /* Gris crema muy suave */
+    background-color: #f7f9f9 !important;
     padding: 100px 8%;
 }
 .titulo-seccion-oscuro {
@@ -184,7 +200,6 @@ section { padding: 80px 8% 120px; position: relative; }
 .dato-contacto a { text-decoration: none; color: var(--azul); font-weight: 600; }
 .dato-contacto p { margin: 0; font-size: 1.1rem; }
 
-/* Arte final: Luna y Hojas juntas */
 .contacto-col-arte {
     display: flex;
     flex-direction: column;
@@ -204,7 +219,9 @@ section { padding: 80px 8% 120px; position: relative; }
     opacity: 0.8;
 }
 
-/* --- FOOTER MINIMALISTA DEFINITIVO --- */
+/* ==========================================================================
+   9. FOOTER MINIMALISTA
+   ========================================================================== */
 .footer-minimal {
     padding: 60px 20px;
     background: #ffffff;
@@ -219,7 +236,7 @@ section { padding: 80px 8% 120px; position: relative; }
     margin: 0;
 }
 .link-nomade {
-    color: #4a90e2 !important; /* Azul Nómade con presencia */
+    color: #4a90e2 !important;
     text-decoration: none;
     font-weight: 800;
     border-bottom: 2px solid #4a90e2;
@@ -231,7 +248,9 @@ section { padding: 80px 8% 120px; position: relative; }
     border-color: var(--verde);
 }
 
-/* --- ANIMACIONES Y DINÁMICA --- */
+/* ==========================================================================
+   10. ANIMACIONES Y ELEMENTOS FLOTANTES GENERALES
+   ========================================================================== */
 .reveal, .reveal-img { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.active, .reveal-img.active { opacity: 1; transform: translateY(0); }
 .marco-foto img, .marco-polaroid img { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -247,13 +266,14 @@ section { padding: 80px 8% 120px; position: relative; }
 .btn-contratar-v2 { animation: pulse-btn 3s infinite; }
 @keyframes pulse-btn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-/* --- DIVIDERS --- */
 .custom-shape-divider-bottom { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; transform: rotate(180deg); }
 .custom-shape-divider-bottom svg { height: 60px; width: 100%; }
 .shape-fill-verde { fill: var(--verde); }
 .shape-fill-rosa { fill: var(--rosa); }
 
-/* --- MEDIA QUERIES --- */
+/* ==========================================================================
+   11. MEDIA QUERIES (RESPONSIVE CELULARES)
+   ========================================================================== */
 @media (max-width: 1024px) {
   .contenedor-libro, .contenedor-musica { grid-template-columns: 1fr; }
   .libro-ficha-tecnica { position: static; }
@@ -263,7 +283,7 @@ section { padding: 80px 8% 120px; position: relative; }
   .grilla-videos-instagram { padding: 0 10px; }
   .hero { height: auto; padding: 100px 20px; }
   .contenedor-contacto { grid-template-columns: 1fr; gap: 50px; text-align: center; }
-  .contacto-col-arte { order: -1; } /* Sube la ilustración arriba del texto en celulares */
+  .contacto-col-arte { order: -1; }
   .dato-contacto { justify-content: center; }
 }
 @media (max-width: 768px) {
@@ -277,27 +297,27 @@ section { padding: 80px 8% 120px; position: relative; }
 }
 
 /* ==========================================================================
-   SOLUCIÓN DE RAÍZ: POP-UP GIGANTE ALINEADO Y SEGURO (BLOQUE ÚNICO)
+   12. POP-UP FLOTANTE GIGANTE (MÁGICO Y SIN ERRORES)
    ========================================================================== */
 .cartel-popup-flotante-grande {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    z-index: 999999 !important;
-    width: 480px !important; /* Ancho fijo real para que nunca se deforme ni colapse */
-    max-width: 90vw !important; /* Seguridad para que en pantallas chicas se achique solo */
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 30px !important;
+    z-index: 999999 !important; /* Forzamos prioridad absoluta en pantalla */
+    width: 460px !important; /* Fijamos el ancho real para evitar desbordes */
+    max-width: 90vw !important; /* Se amolda a notebooks chicas */
     background-color: var(--azul) !important;
     padding: 35px !important;
     border-radius: 25px !important;
     box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6) !important;
     border: 4px dashed rgba(255, 255, 255, 0.9) !important;
     box-sizing: border-box !important;
-    /* EFECTO LEVITACIÓN CONSTANTE */
-    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out;
+    /* LEVITACIÓN CONSTANTE */
+    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out !important;
 }
 
 .popup-interior-grande {
-    display: block !important; /* Cambiamos a block para evitar los tirones de flexbox */
+    display: block !important; /* Desarmamos el flex que rompía las esquinas */
     width: 100% !important;
     box-sizing: border-box !important;
 }
@@ -310,7 +330,7 @@ section { padding: 80px 8% 120px; position: relative; }
 
 .cartel-popup-flotante-grande h3 {
     margin: 0 0 15px 0 !important;
-    font-size: 1.45rem !important;
+    font-size: 1.4rem !important;
     font-weight: 800 !important;
     color: #ffffff !important;
     line-height: 1.3 !important;
@@ -318,7 +338,6 @@ section { padding: 80px 8% 120px; position: relative; }
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    font-family: 'Poppins', sans-serif !important;
 }
 
 .popup-descripcion {
@@ -328,7 +347,6 @@ section { padding: 80px 8% 120px; position: relative; }
     line-height: 1.5 !important;
     display: block !important;
     width: 100% !important;
-    font-family: 'Poppins', sans-serif !important;
 }
 
 .cartel-popup-flotante-grande p strong {
@@ -338,7 +356,6 @@ section { padding: 80px 8% 120px; position: relative; }
     color: #ffffff !important;
 }
 
-/* Caja de invitación interna */
 .popup-invitacion-gacetilla {
     display: inline-flex !important;
     align-items: center !important;
@@ -353,40 +370,30 @@ section { padding: 80px 8% 120px; position: relative; }
     box-sizing: border-box !important;
 }
 
-.popup-invitacion-gacetilla span {
-    font-size: 0.95rem !important;
-    color: #ffffff !important;
-    font-weight: 600 !important;
-}
+.popup-invitacion-gacetilla span { font-size: 0.95rem !important; color: #ffffff !important; font-weight: 600 !important; }
+.popup-invitacion-gacetilla .material-icons { font-size: 1.4rem !important; color: var(--rosa) !important; }
 
-.popup-invitacion-gacetilla .material-icons {
-    font-size: 1.4rem !important;
-    color: var(--rosa) !important;
-}
-
-/* GRILLA FORZADA AL 50% PARA LOS BOTONES */
+/* GRILLA AL 50% PARA BOTONES SIMÉTRICOS */
 .popup-botones-grupo {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Fuerza las dos columnas simétricas */
+    grid-template-columns: 1fr 1fr !important;
     gap: 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     margin-top: 10px !important;
 }
 
-/* ESTILO DEFINITIVO PARA LOS BOTONES DEL POPUP */
 .btn-popup-verde, .btn-popup-blanco {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    height: 48px !important; /* Altura idéntica fija */
-    border-radius: 50px !important; /* Estilo píldora */
+    height: 48px !important; /* Altura perfecta fija */
+    border-radius: 50px !important; /* Diseño redondeado */
     font-size: 0.95rem !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
     width: 100% !important;
-    font-family: 'Poppins', sans-serif !important;
     border: none !important;
     margin: 0 !important;
     text-shadow: none !important;
@@ -394,35 +401,14 @@ section { padding: 80px 8% 120px; position: relative; }
     transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
-/* Botón Verde (WhatsApp) */
-.btn-popup-verde {
-    background-color: var(--verde) !important;
-    color: #ffffff !important;
-    font-weight: 800 !important;
-}
-.btn-popup-verde:hover {
-    background-color: #66a598 !important;
-    transform: translateY(-2px);
-}
+.btn-popup-verde { background-color: var(--verde) !important; color: #ffffff !important; font-weight: 800 !important; }
+.btn-popup-verde:hover { background-color: #66a598 !important; transform: translateY(-2px); }
 
-/* Botón Blanco (Gacetilla) */
-.btn-popup-blanco {
-    background-color: #ffffff !important;
-    color: var(--azul) !important;
-    font-weight: 700 !important;
-}
-.btn-popup-blanco:hover {
-    background-color: #f5fafd !important;
-    transform: translateY(-2px);
-}
+.btn-popup-blanco { background-color: #ffffff !important; color: var(--azul) !important; font-weight: 700 !important; }
+.btn-popup-blanco:hover { background-color: #f5fafd !important; transform: translateY(-2px); }
 
-.estrella-pop-grande {
-    font-size: 1.5rem !important;
-    color: var(--rosa) !important;
-    display: inline-block !important;
-}
+.estrella-pop-grande { font-size: 1.5rem !important; color: var(--rosa) !important; display: inline-block !important; }
 
-/* Cruz de cerrar */
 .cerrar-popup-grande {
     position: absolute !important;
     top: -15px !important;
@@ -441,23 +427,19 @@ section { padding: 80px 8% 120px; position: relative; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 }
 
-/* ANIMACIÓN DE ELEVITACIÓN MÁGICA */
-@keyframes flotar-suave {
-    0% {
-        transform: translateY(0px);
-        box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
-    }
-    50% {
-        transform: translateY(-12px);
-        box-shadow: 0 35px 65px rgba(168, 208, 230, 0.8);
-    }
-    100% {
-        transform: translateY(0px);
-        box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
-    }
+/* KEYFRAMES DE ENTRADA Y MOVIMIENTO CONSTANTE */
+@keyframes entrada-popup-g {
+    from { opacity: 0; transform: translateY(40px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Celulares */
+@keyframes flotar-suave {
+    0% { transform: translateY(0px); box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6); }
+    50% { transform: translateY(-12px); box-shadow: 0 35px 65px rgba(168, 208, 230, 0.8); }
+    100% { transform: translateY(0px); box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6); }
+}
+
+/* Adaptación Celulares */
 @media (max-width: 550px) {
     .cartel-popup-flotante-grande {
         bottom: 15px !important;
@@ -468,8 +450,5 @@ section { padding: 80px 8% 120px; position: relative; }
         padding: 25px 20px !important;
         animation: entrada-popup-g 0.6s ease-out both !important;
     }
-    .popup-botones-grupo {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-    }
+    .popup-botones-grupo { grid-template-columns: 1fr !important; gap: 10px !important; }
 }
