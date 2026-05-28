@@ -452,3 +452,165 @@ section { padding: 80px 8% 120px; position: relative; }
     }
     .popup-botones-grupo { grid-template-columns: 1fr !important; gap: 10px !important; }
 }
+/* ==========================================================================
+   AISLAMIENTO TOTAL: CAJA POP-UP MÁGICA QUE FLOTA Y REBOTA PERFECTO
+   ========================================================================== */
+.caja-popup-magica {
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 30px !important;
+    z-index: 999999 !important; /* Prioridad máxima absoluta sobre toda la pantalla */
+    width: 420px !important; /* Ancho fijo exacto controlado para que NUNCA se estire */
+    max-width: 88vw !important; /* Seguridad para pantallas de notebooks chicas */
+    background-color: var(--azul) !important;
+    padding: 30px 35px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6) !important;
+    border: 4px dashed rgba(255, 255, 255, 0.9) !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    /* LEVITACIÓN CONSTANTE */
+    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out !important;
+}
+
+.caja-popup-magica .popup-interior-grande {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.caja-popup-magica .popup-texto-grande {
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.caja-popup-magica h3 {
+    margin: 0 0 15px 0 !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.3 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+.caja-popup-magica .popup-descripcion {
+    margin: 0 0 20px 0 !important;
+    font-size: 1.05rem !important;
+    color: #ffffff !important;
+    line-height: 1.5 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.caja-popup-magica p strong {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    padding: 2px 6px !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+}
+
+.caja-popup-magica .popup-invitacion-gacetilla {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    padding: 12px 15px !important;
+    border-radius: 15px !important;
+    margin-bottom: 25px !important;
+    border: 1px dashed rgba(255, 255, 255, 0.4) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.caja-popup-magica .popup-invitacion-gacetilla span {
+    font-size: 0.95rem !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.caja-popup-magica .popup-invitacion-gacetilla .material-icons {
+    font-size: 1.4rem !important;
+    color: var(--rosa) !important;
+}
+
+/* GRILLA EXACTA MITAD Y MITAD */
+.caja-popup-magica .popup-botones-grupo {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 10px !important;
+}
+
+.caja-popup-magica .btn-popup-verde, 
+.caja-popup-magica .btn-popup-blanco {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    border-radius: 50px !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
+    border: none !important;
+    margin: 0 !important;
+    text-shadow: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.caja-popup-magica .btn-popup-verde { background-color: var(--verde) !important; color: #ffffff !important; font-weight: 800 !important; }
+.caja-popup-magica .btn-popup-verde:hover { background-color: #66a598 !important; transform: translateY(-2px); }
+
+.caja-popup-magica .btn-popup-blanco { background-color: #ffffff !important; color: var(--azul) !important; font-weight: 700 !important; }
+.caja-popup-magica .btn-popup-blanco:hover { background-color: #f5fafd !important; transform: translateY(-2px); }
+
+.caja-popup-magica .estrella-pop-grande {
+    font-size: 1.5rem !important;
+    color: var(--rosa) !important;
+    display: inline-block !important;
+}
+
+.caja-popup-magica .cerrar-popup-grande {
+    position: absolute !important;
+    top: -15px !important;
+    right: -15px !important;
+    background: #ffffff !important;
+    border: 3px solid var(--azul) !important;
+    color: var(--azul) !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    font-size: 1.4rem !important;
+    line-height: 24px !important;
+    cursor: pointer !important;
+    font-weight: 800 !important;
+    z-index: 1000000 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+}
+
+/* Celulares responsive */
+@media (max-width: 550px) {
+    .caja-popup-magica {
+        bottom: 15px !important;
+        left: 15px !important;
+        right: 15px !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 25px 20px !important;
+        animation: entrada-popup-g 0.6s ease-out both !important;
+    }
+    .caja-popup-magica .popup-botones-grupo {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+}
