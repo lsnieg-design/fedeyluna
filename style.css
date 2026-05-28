@@ -276,70 +276,114 @@ section { padding: 80px 8% 120px; position: relative; }
   nav ul.activo { left: 0; }
 }
 
-/* --- CARTEL POP FUNCIONES --- */
-.cartel-pop {
-    margin-top: 40px;
-    text-align: center;
-    animation: pulso-sutil 4s infinite ease-in-out;
-}
-
-.cartel-pop-interior {
-    background-color: var(--azul); /* Usamos tu azul para que resalte sobre el fondo rosa */
-    color: #fff;
-    padding: 25px 40px;
+/* --- CARTEL POP-UP FLOTANTE PREMIUM --- */
+.cartel-popup-flotante {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Flota en la esquina izquierda acompañando el scroll */
+    z-index: 999; /* Asegura que quede por encima del contenido */
+    max-width: 320px;
+    background-color: var(--azul); /* El celeste suave que contrasta hermoso */
+    padding: 20px 25px;
     border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    box-shadow: 0 10px 25px rgba(168, 208, 230, 0.4);
-    border: 3px dashed #fff; /* El toque lúdico de costura/recorte */
+    box-shadow: 0 10px 30px rgba(168, 208, 230, 0.4);
+    border: 3px dashed rgba(255, 255, 255, 0.7); /* Estilo troquelado escolar */
+    animation: entrada-popup 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, latido-popup 3s infinite ease-in-out;
 }
 
-.cartel-pop h3 {
+.cartel-popup-interior {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+}
+
+.cartel-texto {
+    text-align: left;
+}
+
+.cartel-popup-flotante h3 {
     margin: 0 0 5px 0;
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
-.cartel-pop p {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 500;
+.cartel-popup-flotante p {
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.3;
 }
 
-.cartel-pop p strong {
-    color: #fff;
-    background-color: rgba(127, 188, 173, 0.4); /* Resaltado verde sutil de fondo */
-    padding: 2px 8px;
-    border-radius: 5px;
+.cartel-popup-flotante p strong {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+/* Botón de acción rápido dentro del cartel */
+.btn-popup-accion {
+    display: inline-block;
+    background-color: var(--verde);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.btn-popup-accion:hover {
+    transform: translateY(-2px);
+    background-color: #66a598;
 }
 
 .estrella-pop {
-    font-size: 2.2rem;
-    color: var(--rosa); /* Estrellitas rosa pastel */
-    animation: girar-estrella 6s infinite linear;
+    font-size: 1.4rem;
+    color: var(--rosa); /* Detalle rosa pastel */
 }
 
-/* Animaciones exclusivas para el cartel pop */
-@keyframes pulso-sutil {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+/* Botón de cierre para no molestar */
+.cerrar-popup {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ffffff;
+    border: 2px solid var(--azul);
+    color: var(--azul);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@keyframes girar-estrella {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* Animaciones */
+@keyframes entrada-popup {
+    from { opacity: 0; transform: translateX(-50px) scale(0.9); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
 }
 
-/* Ajuste responsive para que no se rompa en celulares */
-@media (max-width: 768px) {
-    .cartel-pop-interior {
-        flex-direction: column;
-        padding: 20px;
-        gap: 10px;
+@keyframes latido-popup {
+    0%, 100% { box-shadow: 0 10px 30px rgba(168, 208, 230, 0.4); }
+    50% { box-shadow: 0 15px 35px rgba(168, 208, 230, 0.6); transform: translateY(-2px); }
+}
+
+/* Desaparece o se reacomoda en pantallas muy chicas para que no tape la web */
+@media (max-width: 600px) {
+    .cartel-popup-flotante {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        max-width: none;
+        padding: 15px;
     }
-    .cartel-pop h3 { font-size: 1.2rem; }
-    .cartel-pop p { font-size: 1rem; }
 }
