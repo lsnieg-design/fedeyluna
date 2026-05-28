@@ -277,22 +277,22 @@ section { padding: 80px 8% 120px; position: relative; }
 }
 
 /* ==========================================================================
-   PARCHE FINAL: POP-UP GIGANTE QUE LEVITA Y BOTONES ALINEADOS (ÚNICO BLOQUE)
+   PARCHE FINAL UNIFICADO: POP-UP FLOTANTE PERFECTO (REEMPLAZO ÚNICO)
    ========================================================================== */
 .cartel-popup-flotante-grande {
     position: fixed;
     bottom: 30px;
     left: 30px;
-    z-index: 999999 !important; /* Por encima de todo para que no lo tape nada */
+    z-index: 999999 !important; /* Se asegura de flotar por encima de todo */
     width: 90%;
-    max-width: 480px; /* Ensanchado para que el texto respire perfectamente */
+    max-width: 480px; /* Ancho ideal para que el texto respire */
     background-color: var(--azul);
     padding: 35px;
     border-radius: 25px;
     box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
     border: 4px dashed rgba(255, 255, 255, 0.9);
     box-sizing: border-box !important;
-    /* EFECTO MÁGICO: Entrada con rebote y levitación infinita */
+    /* ANIMACIÓN: Entrada fluida con levitación constante en el aire */
     animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out;
 }
 
@@ -305,7 +305,7 @@ section { padding: 80px 8% 120px; position: relative; }
 }
 
 .popup-texto-grande {
-    text-align: center;
+    text-align: center; /* Centra el bloque interno */
     width: 100%;
     box-sizing: border-box;
 }
@@ -316,6 +316,7 @@ section { padding: 80px 8% 120px; position: relative; }
     font-weight: 800;
     color: #ffffff;
     line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
 }
 
 .popup-descripcion {
@@ -325,6 +326,7 @@ section { padding: 80px 8% 120px; position: relative; }
     line-height: 1.5 !important;
     display: block !important;
     width: 100% !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cartel-popup-flotante-grande p strong {
@@ -334,14 +336,14 @@ section { padding: 80px 8% 120px; position: relative; }
     color: #ffffff;
 }
 
-/* Caja de invitación interna */
+/* Contenedor del llamado a la gacetilla */
 .popup-invitacion-gacetilla {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     background: rgba(255, 255, 255, 0.15);
-    padding: 12px 20px;
+    padding: 12px 15px;
     border-radius: 15px;
     margin-bottom: 25px;
     border: 1px dashed rgba(255, 255, 255, 0.4);
@@ -360,32 +362,33 @@ section { padding: 80px 8% 120px; position: relative; }
     color: var(--rosa);
 }
 
-/* GRILLA DE DOS COLUMNAS SIMÉTRICAS */
+/* GRILLA SÚPER CONTROLADA PARA CENTRAR BOTONES */
 .popup-botones-grupo {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Fuerza las dos columnas perfectas */
+    grid-template-columns: 1fr 1fr !important; /* Fuerza las dos columnas simétricas */
     gap: 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     margin-top: 10px !important;
 }
 
-/* ESTILO DEFINITIVO PARA LOS BOTONES DEL POPUP */
+/* RESET E INDEPENDENCIA TOTAL DE LOS BOTONES NUEVOS */
 .btn-popup-verde, .btn-popup-blanco {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    height: 50px !important; /* Altura fija idéntica */
-    border-radius: 50px !important; /* Forma redondeada de píldora */
+    height: 50px !important; /* Altura simétrica estricta */
+    border-radius: 50px !important; /* Estilo píldora */
     font-size: 0.95rem !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
-    width: 100% !important;
+    width: 100% !important; /* Ocupa el espacio justo de su columna */
     font-family: 'Poppins', sans-serif !important;
     border: none !important;
     margin: 0 !important;
     text-shadow: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
     transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
@@ -394,19 +397,17 @@ section { padding: 80px 8% 120px; position: relative; }
     background-color: var(--verde) !important;
     color: #ffffff !important;
     font-weight: 800 !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
 }
 .btn-popup-verde:hover {
     background-color: #66a598 !important;
     transform: translateY(-2px);
 }
 
-/* Botón Blanco (Gacetilla) */
+/* Botón Blanco (Gacetilla Drive) */
 .btn-popup-blanco {
     background-color: #ffffff !important;
     color: var(--azul) !important;
     font-weight: 700 !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
 }
 .btn-popup-blanco:hover {
     background-color: #f5fafd !important;
@@ -419,7 +420,7 @@ section { padding: 80px 8% 120px; position: relative; }
     animation: girar-estrella-g 8s infinite linear;
 }
 
-/* Botón de cerrar (X) */
+/* Botón Cruz para Cerrar */
 .cerrar-popup-grande {
     position: absolute;
     top: -15px;
@@ -438,15 +439,15 @@ section { padding: 80px 8% 120px; position: relative; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* ANIMACIÓN DE LEVITACIÓN EN EL AIRE */
+/* ANIMACIÓN DE LEVITACIÓN ORGÁNICA */
 @keyframes flotar-suave {
     0% {
         transform: translateY(0px);
         box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6);
     }
     50% {
-        transform: translateY(-12px); /* El cartel sube suavemente */
-        box-shadow: 0 35px 65px rgba(168, 208, 230, 0.8); /* La sombra acompaña el movimiento */
+        transform: translateY(-12px); /* Eleva el pop-up en el eje Y */
+        box-shadow: 0 35px 65px rgba(168, 208, 230, 0.8);
     }
     100% {
         transform: translateY(0px);
@@ -459,7 +460,7 @@ section { padding: 80px 8% 120px; position: relative; }
     to { transform: rotate(360deg); }
 }
 
-/* Responsive para pantallas chicas */
+/* Optimización para Dispositivos Móviles */
 @media (max-width: 550px) {
     .cartel-popup-flotante-grande {
         bottom: 15px;
@@ -468,10 +469,10 @@ section { padding: 80px 8% 120px; position: relative; }
         width: auto;
         max-width: none;
         padding: 25px 20px;
-        animation: entrada-popup-g 0.6s ease-out both; /* Apagamos la flotación en celular para facilitar el clic */
+        animation: entrada-popup-g 0.6s ease-out both; /* Se desactiva la flotación para evitar mareos al scrollear en celular */
     }
     .popup-botones-grupo {
-        grid-template-columns: 1fr !important; /* Se apilan verticales en móviles */
+        grid-template-columns: 1fr !important; /* Pasa a formato lista/vertical */
         gap: 10px !important;
     }
 }
