@@ -276,114 +276,178 @@ section { padding: 80px 8% 120px; position: relative; }
   nav ul.activo { left: 0; }
 }
 
-/* --- CARTEL POP-UP FLOTANTE PREMIUM --- */
-.cartel-popup-flotante {
+/* --- CARTEL POP-UP FLOTANTE GIGANTE --- */
+.cartel-popup-flotante-grande {
     position: fixed;
-    bottom: 25px;
-    left: 25px; /* Flota en la esquina izquierda acompañando el scroll */
-    z-index: 999; /* Asegura que quede por encima del contenido */
-    max-width: 320px;
-    background-color: var(--azul); /* El celeste suave que contrasta hermoso */
-    padding: 20px 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(168, 208, 230, 0.4);
-    border: 3px dashed rgba(255, 255, 255, 0.7); /* Estilo troquelado escolar */
-    animation: entrada-popup 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, latido-popup 3s infinite ease-in-out;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999; /* Por encima de absolutamente todo */
+    max-width: 440px; /* Mucho más grande y espacioso */
+    background-color: var(--azul); /* Tu celeste pastel hermoso */
+    padding: 30px 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5);
+    border: 4px dashed rgba(255, 255, 255, 0.8); /* Trazo escolar más marcado */
+    animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, latido-popup-g 3.5s infinite ease-in-out;
 }
 
-.cartel-popup-interior {
+.popup-interior-grande {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 15px;
     position: relative;
 }
 
-.cartel-texto {
+.popup-texto-grande {
     text-align: left;
 }
 
-.cartel-popup-flotante h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.15rem;
-    font-weight: 700;
+.cartel-popup-flotante-grande h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem; /* Título imponente */
+    font-weight: 800;
     color: #ffffff;
     line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
-.cartel-popup-flotante p {
-    margin: 0 0 12px 0;
+.cartel-popup-flotante-grande p {
+    margin: 0 0 15px 0;
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.cartel-popup-flotante-grande p strong {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+/* Caja de invitación a ver la gacetilla */
+.popup-invitacion-gacetilla {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.popup-invitacion-gacetilla span {
     font-size: 0.9rem;
     color: #ffffff;
-    line-height: 1.3;
+    font-weight: 600;
 }
 
-.cartel-popup-flotante p strong {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 1px 4px;
-    border-radius: 4px;
+.popup-invitacion-gacetilla .material-icons {
+    font-size: 1.3rem;
+    color: var(--rosa);
 }
 
-/* Botón de acción rápido dentro del cartel */
-.btn-popup-accion {
-    display: inline-block;
+/* Grupo de botones */
+.popup-botones-grupo {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-popup-accion-grande {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background-color: var(--verde);
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 6px 14px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 10px 20px;
     border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.2s ease;
 }
 
-.btn-popup-accion:hover {
+.btn-popup-accion-grande:hover {
     transform: translateY(-2px);
     background-color: #66a598;
 }
 
-.estrella-pop {
-    font-size: 1.4rem;
-    color: var(--rosa); /* Detalle rosa pastel */
+.btn-popup-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: 0.2s ease;
 }
 
-/* Botón de cierre para no molestar */
-.cerrar-popup {
+.btn-popup-secundario:hover {
+    transform: translateY(-2px);
+    background-color: #f0f7fa;
+}
+
+.estrella-pop-grande {
+    font-size: 1.8rem;
+    color: var(--rosa);
+    animation: girar-estrella-g 8s infinite linear;
+}
+
+/* Botón de cerrar */
+.cerrar-popup-grande {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: -15px;
+    right: -15px;
     background: #ffffff;
-    border: 2px solid var(--azul);
+    border: 3px solid var(--azul);
     color: var(--azul);
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    font-size: 1.1rem;
-    line-height: 18px;
+    font-size: 1.3rem;
+    line-height: 22px;
     cursor: pointer;
-    font-weight: bold;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: 800;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* Animaciones */
-@keyframes entrada-popup {
-    from { opacity: 0; transform: translateX(-50px) scale(0.9); }
-    to { opacity: 1; transform: translateX(0) scale(1); }
+@keyframes entrada-popup-g {
+    from { opacity: 0; transform: translateY(50px) scale(0.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes latido-popup {
-    0%, 100% { box-shadow: 0 10px 30px rgba(168, 208, 230, 0.4); }
-    50% { box-shadow: 0 15px 35px rgba(168, 208, 230, 0.6); transform: translateY(-2px); }
+@keyframes latido-popup-g {
+    0%, 100% { box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5); transform: translateY(0); }
+    50% { box-shadow: 0 20px 50px rgba(168, 208, 230, 0.7); transform: translateY(-4px); }
 }
 
-/* Desaparece o se reacomoda en pantallas muy chicas para que no tape la web */
+@keyframes girar-estrella-g {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Pantallas chicas */
 @media (max-width: 600px) {
-    .cartel-popup-flotante {
+    .cartel-popup-flotante-grande {
         bottom: 15px;
         left: 15px;
         right: 15px;
         max-width: none;
-        padding: 15px;
+        padding: 20px;
+    }
+    .popup-botones-grupo {
+        flex-direction: column;
+    }
+    .btn-popup-accion-grande, .btn-popup-secundario {
+        width: 100%;
+        justify-content: center;
     }
 }
