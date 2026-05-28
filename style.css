@@ -451,3 +451,73 @@ section { padding: 80px 8% 120px; position: relative; }
         justify-content: center;
     }
 }
+/* --- ARREGLO DE BOTONES DEL POPUP GIGANTE --- */
+.cartel-popup-flotante-grande {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+    max-width: 440px;
+    background-color: var(--azul);
+    padding: 30px 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(168, 208, 230, 0.5);
+    border: 4px dashed rgba(255, 255, 255, 0.8);
+    box-sizing: border-box; /* Evita que los paddings deformen la caja */
+}
+
+.popup-botones-grupo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Fuerza dos columnas iguales perfectas */
+    gap: 15px; /* Espacio exacto entre ambos botones */
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-popup-accion-grande, .btn-popup-secundario {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 15px !important; /* Ajuste uniforme de altura */
+    border-radius: 50px !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    width: 100% !important; /* Ahora ocupan el 100% de SU COLUMNA, no de todo el cartel */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Botón Verde (WhatsApp) */
+.btn-popup-accion-grande {
+    background-color: var(--verde) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-popup-accion-grande:hover {
+    transform: translateY(-2px);
+    background-color: #66a598 !important;
+}
+
+/* Botón Blanco (Gacetilla Drive) */
+.btn-popup-secundario {
+    background-color: #ffffff !important;
+    color: var(--azul) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.btn-popup-secundario:hover {
+    transform: translateY(-2px);
+    background-color: #f5fafd !important;
+}
+
+/* Responsive para celulares: uno abajo del otro si la pantalla es muy chica */
+@media (max-width: 500px) {
+    .popup-botones-grupo {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
