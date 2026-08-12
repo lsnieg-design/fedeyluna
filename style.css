@@ -448,3 +448,63 @@ section { padding: 80px 8% 120px; position: relative; }
         padding: 25px 20px !important;
     }
 }
+/* ==========================================================================
+   13. LIGHTBOX (VISOR DE IMÁGENES EN GRANDE)
+   ========================================================================== */
+.modal-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999999; /* Por encima de todo, incluso del popup */
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semitransparente */
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-lightbox.mostrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-contenido-img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: zoom-in 0.3s ease;
+}
+
+.cerrar-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.cerrar-lightbox:hover {
+    color: var(--verde);
+}
+
+/* Ponemos cursor de 'lupa' o 'mano' a las fotos para que se sepa que son clickeables */
+.marco-foto img, .marco-polaroid img {
+    cursor: zoom-in;
+}
+
+@keyframes zoom-in {
+    from {transform: scale(0.8)}
+    to {transform: scale(1)}
+}
