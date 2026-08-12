@@ -312,7 +312,7 @@ section { padding: 80px 8% 120px; position: relative; }
     box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6) !important;
     border: 4px dashed rgba(255, 255, 255, 0.9) !important;
     box-sizing: border-box !important;
-    display: block !important;
+    /* ELIMINADO EL DISPLAY: BLOCK !IMPORTANT QUE BLOQUEABA EL BOTÓN */
     animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out !important;
 }
 
@@ -369,9 +369,10 @@ section { padding: 80px 8% 120px; position: relative; }
     font-weight: 600 !important;
 }
 
+/* Solución al desborde: Apilamos los botones verticalmente */
 .caja-popup-magica .popup-botones-grupo {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -386,7 +387,7 @@ section { padding: 80px 8% 120px; position: relative; }
     gap: 6px !important;
     height: 45px !important;
     border-radius: 50px !important;
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
     width: 100% !important;
@@ -445,9 +446,5 @@ section { padding: 80px 8% 120px; position: relative; }
         width: auto !important;
         max-width: none !important;
         padding: 25px 20px !important;
-    }
-    .caja-popup-magica .popup-botones-grupo {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
     }
 }
