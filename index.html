@@ -201,10 +201,12 @@
 <a href="#" class="btn-subir" id="btnScroll"><span class="material-icons">expand_less</span></a>
 
     <script>
+        // Menú hamburguesa
         document.getElementById('menu-toggle').onclick = function() { 
             document.getElementById('menu-lista').classList.toggle('activo'); 
         };
 
+        // Scroll y botón subir
         window.onscroll = function() { 
             var btn = document.getElementById('btnScroll');
             if (btn) {
@@ -213,6 +215,7 @@
             reveal();
         };
 
+        // Animaciones al scrollear
         function reveal() {
             var reveals = document.querySelectorAll(".reveal, .reveal-img");
             for (var i = 0; i < reveals.length; i++) {
@@ -224,10 +227,29 @@
             }
         }
         window.addEventListener('load', reveal);
-    </script>
 
+        // --- NUEVO: Visor de imágenes (Lightbox) ---
+        var modalLightbox = document.getElementById("modal-imagen");
+        var imgAmpliada = document.getElementById("img-ampliada");
+        var imagenesGaleria = document.querySelectorAll('.marco-foto img, .marco-polaroid img');
+
+        imagenesGaleria.forEach(function(img) {
+            img.onclick = function() {
+                modalLightbox.classList.add("mostrar");
+                imgAmpliada.src = this.src; // Toma la ruta de la imagen clickeada
+            }
+        });
+
+        function cerrarModal() {
+            modalLightbox.classList.remove("mostrar");
+        }
+    </script>
     <!-- El popup va DENTRO del body -->
-   <div class="caja-popup-magica" id="popupEscuelas">
+ <div id="modal-imagen" class="modal-lightbox" onclick="cerrarModal()">
+        <span class="cerrar-lightbox">&times;</span>
+        <img class="modal-contenido-img" id="img-ampliada">
+    </div>
+    <div class="caja-popup-magica" id="popupEscuelas">
     <button class="cerrar-popup-grande" onclick="document.getElementById('popupEscuelas').style.display='none'">×</button>
     <div class="popup-interior-grande">
         <div class="popup-texto-grande">
