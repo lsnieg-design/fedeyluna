@@ -37,7 +37,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
- text-decoration: none;
+  text-decoration: none;
   transition: transform 0.3s ease;
 }
 .logo-container:hover { transform: scale(1.02); }
@@ -303,21 +303,20 @@ section { padding: 80px 8% 120px; position: relative; }
     position: fixed !important;
     bottom: 30px !important;
     left: 30px !important;
-    z-index: 999999 !important; /* Forzamos prioridad absoluta en pantalla */
-    width: 460px !important; /* Fijamos el ancho real para evitar desbordes */
-    max-width: 90vw !important; /* Se amolda a notebooks chicas */
+    z-index: 999999 !important;
+    width: 460px !important;
+    max-width: 90vw !important;
     background-color: var(--azul) !important;
     padding: 35px !important;
     border-radius: 25px !important;
     box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6) !important;
     border: 4px dashed rgba(255, 255, 255, 0.9) !important;
     box-sizing: border-box !important;
-    /* LEVITACIÓN CONSTANTE */
     animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out !important;
 }
 
 .popup-interior-grande {
-    display: block !important; /* Desarmamos el flex que rompía las esquinas */
+    display: block !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
@@ -373,7 +372,6 @@ section { padding: 80px 8% 120px; position: relative; }
 .popup-invitacion-gacetilla span { font-size: 0.95rem !important; color: #ffffff !important; font-weight: 600 !important; }
 .popup-invitacion-gacetilla .material-icons { font-size: 1.4rem !important; color: var(--rosa) !important; }
 
-/* GRILLA AL 50% PARA BOTONES SIMÉTRICOS */
 .popup-botones-grupo {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -388,8 +386,8 @@ section { padding: 80px 8% 120px; position: relative; }
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    height: 48px !important; /* Altura perfecta fija */
-    border-radius: 50px !important; /* Diseño redondeado */
+    height: 48px !important;
+    border-radius: 50px !important;
     font-size: 0.95rem !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
@@ -427,7 +425,6 @@ section { padding: 80px 8% 120px; position: relative; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 }
 
-/* KEYFRAMES DE ENTRADA Y MOVIMIENTO CONSTANTE */
 @keyframes entrada-popup-g {
     from { opacity: 0; transform: translateY(40px) scale(0.9); }
     to { opacity: 1; transform: translateY(0) scale(1); }
@@ -439,7 +436,6 @@ section { padding: 80px 8% 120px; position: relative; }
     100% { transform: translateY(0px); box-shadow: 0 20px 50px rgba(168, 208, 230, 0.6); }
 }
 
-/* Adaptación Celulares */
 @media (max-width: 550px) {
     .cartel-popup-flotante-grande {
         bottom: 15px !important;
@@ -452,16 +448,17 @@ section { padding: 80px 8% 120px; position: relative; }
     }
     .popup-botones-grupo { grid-template-columns: 1fr !important; gap: 10px !important; }
 }
+
 /* ==========================================================================
-   AISLAMIENTO TOTAL: CAJA POP-UP MÁGICA QUE FLOTA Y REBOTA PERFECTO
+   13. AISLAMIENTO TOTAL: CAJA POP-UP MÁGICA
    ========================================================================== */
 .caja-popup-magica {
     position: fixed !important;
     bottom: 30px !important;
     left: 30px !important;
-    z-index: 999999 !important; /* Prioridad máxima absoluta sobre toda la pantalla */
-    width: 420px !important; /* Ancho fijo exacto controlado para que NUNCA se estire */
-    max-width: 88vw !important; /* Seguridad para pantallas de notebooks chicas */
+    z-index: 999999 !important;
+    width: 420px !important;
+    max-width: 88vw !important;
     background-color: var(--azul) !important;
     padding: 30px 35px !important;
     border-radius: 25px !important;
@@ -469,7 +466,6 @@ section { padding: 80px 8% 120px; position: relative; }
     border: 4px dashed rgba(255, 255, 255, 0.9) !important;
     box-sizing: border-box !important;
     display: block !important;
-    /* LEVITACIÓN CONSTANTE */
     animation: entrada-popup-g 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both, flotar-suave 4s infinite ease-in-out !important;
 }
 
@@ -538,7 +534,6 @@ section { padding: 80px 8% 120px; position: relative; }
     color: var(--rosa) !important;
 }
 
-/* GRILLA EXACTA MITAD Y MITAD */
 .caja-popup-magica .popup-botones-grupo {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -598,7 +593,6 @@ section { padding: 80px 8% 120px; position: relative; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 }
 
-/* Celulares responsive */
 @media (max-width: 550px) {
     .caja-popup-magica {
         bottom: 15px !important;
